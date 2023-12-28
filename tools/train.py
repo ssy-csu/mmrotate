@@ -21,6 +21,8 @@ from mmrotate.models import build_detector
 from mmrotate.utils import (collect_env, get_device, get_root_logger,
                             setup_multi_processes)
 
+# 忽略 "mmcv将更名为mmcv-lite，mmcv-full将更名为mmcv" 的警告
+warnings.filterwarnings("ignore", category=UserWarning, message="On January 1, 2023, MMCV will release v2.0.0,*")
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Train a detector')
